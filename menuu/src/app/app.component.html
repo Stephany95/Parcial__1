@@ -1,0 +1,24 @@
+
+<mat-card>
+  
+<form class="example-form">
+  <mat-form-field class="example-full-width">
+    <input matInput placeholder="Busca tu personaje favorito"  id="search" [ngModelOptions]="{standalone: true}" [(ngModel)]="name" (keyup)="onNameKeyUp ($event)">
+  </mat-form-field>
+  <button mat-button (click)="getData()">Click me!</button>
+</form>
+
+</mat-card>
+
+<mat-card>
+  <mat-list>
+   <h3 matSubheader>Personajes</h3>
+   <mat-list-item *ngFor="let personaje of personajes ">
+      <mat-icon matListIcon>Personajes</mat-icon>
+      <h4 matLine>{{personaje.name}}</h4>
+   </mat-list-item>
+   <mat-divider></mat-divider>
+</mat-list>
+
+</mat-card>
+
